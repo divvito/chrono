@@ -14,7 +14,8 @@
     "browserify": "^14.3.0",
     "coveralls": "^2.11.2",
     "jest": "^22.0.4",
-    "minifyify": "^7.0.6"
+    "minifyify": "^7.0.6",
+    "typescript": "^2.7.1"
   },
   "scripts": {
     "make-bundle": "browserify src/chrono.js -d --s chrono -o chrono.js",
@@ -25,7 +26,23 @@
     "coveralls": "npm run test && cat coverage/lcov.info | coveralls"
   },
   "dependencies": {
-    "moment": "2.10.3"
+    "@types/jest": "^22.1.2",
+    "@types/node": "^9.4.5",
+    "moment": "2.20.1"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "<rootDir>/preprocessor.js"
+    },
+    "testMatch": [
+      "**/__tests__/**/*.ts?(x)",
+      "**/?(*.)(spec|test).ts?(x)"
+    ]
   },
   "author": "chris <chris@divvito.com>",
   "private": true

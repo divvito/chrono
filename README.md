@@ -60,10 +60,10 @@ Swift    | Try using the community-made [chrono-swift] wrapper.
 
 #### Browserify
 
-Chrono's modules are linked and packaged using [Browserify](http://browserify.org) on `src/chrono.js`. By default, `chrono.js` file exports `chrono` object as a window global.
+Chrono's modules are linked and packaged using [Browserify](http://browserify.org) on `src/chrono.ts`. By default, `chrono.ts` file exports `chrono` object as a window global.
 
 ```
-browserify src/chrono.js --s chrono -o chrono.js
+browserify src/chrono.ts --s chrono -o chrono.ts
 ```
 
 ## Usage
@@ -261,7 +261,7 @@ npm install
 npm run test
 ```
 
-Chrono's source files is in `src` directory. The built bundle (`chrono.js` and `chrono.min.js`) can be built by [Browserify](http://browserify.org) on `src/chrono.js` using the following command 
+Chrono's source files is in `src` directory. The built bundle (`chrono.ts` and `chrono.min.js`) can be built by [Browserify](http://browserify.org) on `src/chrono.ts` using the following command 
 
 ```
 npm run make

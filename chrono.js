@@ -6877,7 +6877,7 @@ exports.Parser = function ESTimeExpressionParser(){
 var moment = require('moment');
 var Parser = require('../parser').Parser;
 var ParsedResult = require('../../result').ParsedResult;
-var updateParsedComponent = require('../EN/ENWeekdayParser').updateParsedComponent;
+var updateParsedComponent = ENWeekdayParser.updateParsedComponent;
 
 var DAYS_OFFSET = { 'domingo': 0, 'dom': 0, 'lunes': 1, 'lun': 1, 'martes': 2, 'mar':2, 'miercoles': 3, 'miércoles': 3, 'mie': 3,
     'jueves': 4, 'jue': 4, 'viernes': 5, 'vier': 5, 'sabado': 6, 'sábado': 6, 'sab': 6,}
@@ -7880,7 +7880,7 @@ exports.Parser = function FRTimeExpressionParser(){
 var moment = require('moment');
 var Parser = require('../parser').Parser;
 var ParsedResult = require('../../result').ParsedResult;
-var updateParsedComponent = require('../EN/ENWeekdayParser').updateParsedComponent;
+var updateParsedComponent = ENWeekdayParser.updateParsedComponent;
 
 var DAYS_OFFSET = { 'dimanche': 0, 'dim': 0, 'lundi': 1, 'lun': 1,'mardi': 2, 'mar':2, 'mercredi': 3, 'mer': 3,
     'jeudi': 4, 'jeu':4, 'vendredi': 5, 'ven': 5,'samedi': 6, 'sam': 6};
@@ -8229,7 +8229,7 @@ var moment = require('moment');
 var Parser = require('../parser').Parser;
 var ParsedResult = require('../../result').ParsedResult;
 
-var util = require('../../utils/ZH-Hant.js');
+var util = require('../../utils/ZH-Hant.ts');
 
 var PATTERN = new RegExp(
     '(\\d{2,4}|[' + Object.keys(util.NUMBER).join('') + ']{2,4})?' +
@@ -8303,7 +8303,7 @@ var moment = require('moment');
 var Parser = require('../parser').Parser;
 var ParsedResult = require('../../result').ParsedResult;
 
-var util = require('../../utils/ZH-Hant.js');
+var util = require('../../utils/ZH-Hant.ts');
 
 var PATTERN = new RegExp(
     '(\\d+|[' + Object.keys(util.NUMBER).join('') + ']+|半|幾)(?:\\s*)' +
@@ -8402,7 +8402,7 @@ var Parser = require('../parser').Parser;
 var ParsedResult = require('../../result').ParsedResult;
 var ParsedComponents = require('../../result').ParsedComponents;
 
-var util = require('../../utils/ZH-Hant.js');
+var util = require('../../utils/ZH-Hant.ts');
 
 var patternString1 = '(?:由|從|自)?' +
     '(?:' +
@@ -8797,9 +8797,9 @@ exports.Parser = function ZHHantTimeExpressionParser() {
 var moment = require('moment');
 var Parser = require('../parser').Parser;
 var ParsedResult = require('../../result').ParsedResult;
-var updateParsedComponent = require('../EN/ENWeekdayParser').updateParsedComponent;
+var updateParsedComponent = ENWeekdayParser.updateParsedComponent;
 
-var util = require('../../utils/ZH-Hant.js');
+var util = require('../../utils/ZH-Hant.ts');
 
 var PATTERN = new RegExp(
     '(上|今|下|這|呢)?' +
