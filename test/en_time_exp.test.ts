@@ -665,6 +665,18 @@ test("Test - Random date + time expression", function() {
     var result = chrono.parse(text)[0];
     expect(result.text).toBe(text)
 
+    var text = "7 until 10pm";
+    var result = chrono.parse(text)[0];
+    expect(result.text).toBe(text)
+
+    var text = "7 til 10pm";
+    var result = chrono.parse(text)[0];
+    expect(result.text).toBe(text)
+
+    var text = "7 till 10pm";
+    var result = chrono.parse(text)[0];
+    expect(result.text).toBe(text)
+
     var text = "11.1pm";
     var result = chrono.parse(text)[0];
     expect(result.text).toBe(text)

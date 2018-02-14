@@ -21,7 +21,7 @@ export default class ENTimeExpressionParser extends Parser {
         "(?=\\W|$)", 'i');
 
     private END_PATTERN: RegExp = new RegExp("^\\s*" +
-        "(\\-|\\–|\\~|\\〜|to|\\?)\\s*" +
+        "(\\-|\\–|\\~|\\〜|to|(?:un)?till?|\\?)\\s*" +
         "(\\d{1,4})" +
         "(?:" +
         "(?:\\.|\\:|\\：)(\\d{1,2})" +

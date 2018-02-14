@@ -19,7 +19,7 @@ class ENTimeExpressionParser extends parser_1.default {
             "(?:\\s*(A\\.M\\.|P\\.M\\.|AM?|PM?|O\\W*CLOCK))?" +
             "(?=\\W|$)", 'i');
         this.END_PATTERN = new RegExp("^\\s*" +
-            "(\\-|\\–|\\~|\\〜|to|\\?)\\s*" +
+            "(\\-|\\–|\\~|\\〜|to|(?:un)?till?|\\?)\\s*" +
             "(\\d{1,4})" +
             "(?:" +
             "(?:\\.|\\:|\\：)(\\d{1,2})" +
