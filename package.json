@@ -4,12 +4,13 @@
   "homepage": "http://github.com/divvito/chrono",
   "repository": "https://github.com/divvito/chrono.git",
   "license": "MIT",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "directories": {
     "source": "./src",
     "test": "./test"
   },
   "main": "./src/chrono",
+  "types": "typings/chrono.d.ts",
   "devDependencies": {
     "@types/jest": "^22.1.2",
     "@types/node": "^9.4.6",
@@ -28,7 +29,8 @@
     "make": "npm run make-bundle & npm run make-minify",
     "watch": "jest --watch",
     "test": "jest --coverage",
-    "coveralls": "npm run test && cat coverage/lcov.info | coveralls"
+    "coveralls": "npm run test && cat coverage/lcov.info | coveralls",
+    "types": "tsc src/chrono.ts --declaration --target es2015 --module commonjs --outDir typings && rm typings/**/*.js"
   },
   "dependencies": {
     "moment": "2.20.1"
