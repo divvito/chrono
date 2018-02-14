@@ -4,7 +4,7 @@
   "homepage": "http://github.com/divvito/chrono",
   "repository": "https://github.com/divvito/chrono.git",
   "license": "MIT",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "directories": {
     "source": "./src",
     "test": "./test"

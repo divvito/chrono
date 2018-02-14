@@ -12,9 +12,9 @@ import {Options,
     strictOption} from "./options";
 import Parser, * as parser from './parsers/parser';
 import Refiner, * as refiner from './refiners/refiner';
+import {Filter} from './refiners/refiner';
 import {ParsedResult, ParsedComponents} from './result';
 
-const {Filter} = refiner;
 export {options, parser, refiner, Parser, Refiner, ParsedResult, ParsedComponents, Filter};
 
 export type ParseOptions = {

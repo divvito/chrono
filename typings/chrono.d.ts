@@ -2,6 +2,7 @@ import * as options from './options';
 import { Options } from "./options";
 import Parser, * as parser from './parsers/parser';
 import Refiner, * as refiner from './refiners/refiner';
+import { Filter } from './refiners/refiner';
 import { ParsedResult, ParsedComponents } from './result';
 export { options, parser, refiner, Parser, Refiner, ParsedResult, ParsedComponents, Filter };
 export declare type ParseOptions = {
