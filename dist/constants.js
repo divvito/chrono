@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.HOUR = 'hour';
+exports.MINUTE = 'minute';
+exports.SECOND = 'second';
+exports.MILLISECOND = 'millisecond';
+exports.MERIDIEM = 'meridiem';
+exports.DAY = 'day';
+exports.MONTH = 'month';
+exports.YEAR = 'year';
+exports.WEEKDAY = 'weekday';
+exports.TIMEZONE_OFFSET = 'timezoneOffset';
+exports.WEEK = 'week';
