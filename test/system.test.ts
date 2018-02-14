@@ -1,10 +1,11 @@
 import {ParseOptions} from "../src/chrono";
 import {ParsedResult} from "../src/result";
+import Parser from "../src/parsers/parser";
 
 const chrono = require('../src/chrono');
 
-var ok = function() {
-	expect(arguments[0]).toBeTruthy();
+var ok = function(arg: any) {
+	expect(arg).toBeTruthy();
 }
 
 //-------------------------------------
@@ -105,7 +106,7 @@ test("Test - Override parser", function() {
 	var extractCalled = 0;
 
 	class CustomParser extends chrono.Parser {
-    	pattern() { return /pattern/; }
+    	pattern(): RegExp { return /pattern/; }
 
         extract(text: string, ref: Date, match: RegExpExecArray, opt: ParseOptions): ParsedResult | null {
             if(extractCalled == 0){
@@ -130,22 +131,22 @@ test("Test - Override parser", function() {
 });
 
 test("Test - Add custom parser", function() {
-    var customParser = new chrono.Parser();
+	class CustomParser extends Parser {
+        pattern(): RegExp { return /(\d{1,2})(st|nd|rd|th)/i }
+        extract(text: string, ref: Date, match: RegExpExecArray, opt: ParseOptions): ParsedResult | null {
+            return new chrono.ParsedResult({
+                ref: ref,
+                text: match[0],
+                index: match.index,
+                start: {
+                    day: parseInt(match[1])
+                }
+            });
+        }
+    }
 
-    customParser.pattern = function () { return /(\d{1,2})(st|nd|rd|th)/i } 
-    customParser.extract = function(text, ref, match, opt) { 
-        return new chrono.ParsedResult({
-            ref: ref,
-            text: match[0],
-            index: match.index,
-            start: {
-                day: parseInt(match[1]) 
-            }
-        });
-	}
-	
     var custom = new chrono.Chrono();
-    custom.parsers.push(customParser);
+    custom.parsers.push(new CustomParser());
 
     var text = "meeting on 25th";
 	var result = custom.parse(text, new Date(2017,11 -1, 19))[0];

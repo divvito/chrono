@@ -55,7 +55,6 @@ export class Chrono {
         allResults.sort((a, b) => a.index - b.index);
 
         this.refiners.forEach((refiner) =>
-
             allResults = refiner.refine(text, allResults, mergedOptions)
         );
 
