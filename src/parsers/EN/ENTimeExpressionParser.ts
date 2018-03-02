@@ -42,7 +42,7 @@ export default class ENTimeExpressionParser extends Parser {
 
     private OTHER_PATTERNS: RegExp[] = [
         /\w/,
-        /^\s*([+\-])\s*\d{3,4}$/,
+        /^\s*([+\-])\d{3,4}$/,
         /^\d+$/,
 
     ];

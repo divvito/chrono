@@ -37,7 +37,7 @@ class ENTimeExpressionParser extends parser_1.default {
         this.TAG = 'ENTimeExpressionParser';
         this.OTHER_PATTERNS = [
             /\w/,
-            /^\s*([+\-])\s*\d{3,4}$/,
+            /^\s*([+\-])\d{3,4}$/,
             /^\d+$/,
         ];
     }
